@@ -15,10 +15,10 @@ public class Employe {
         this.noteEvaluation = noteEvaluation;
         this.echelon = echelon;
         this.salaire = salaire;
-        determinerTauxBonus();
-        determinerTauxAugmentationSalaire();
-        calculerMontantBonus();
-        calculerMontantAugmentationSalaire();
+        this.determinerTauxBonus();
+        this.determinerTauxAugmentationSalaire();
+        this.calculerMontantBonus();
+        this.calculerMontantAugmentationSalaire();
     }
     public Employe(String matricule, String prenom, String nom, int echelon, double salaire) {
         this.matricule = matricule;
@@ -26,10 +26,10 @@ public class Employe {
         this.nom = nom;
         this.echelon = echelon;
         this.salaire = salaire;
-        determinerTauxBonus();
-        determinerTauxAugmentationSalaire();
-        calculerMontantBonus();
-        calculerMontantAugmentationSalaire();
+        this.determinerTauxBonus();
+        this.determinerTauxAugmentationSalaire();
+        this.calculerMontantBonus();
+        this.calculerMontantAugmentationSalaire();
     }
 
     // Getters
