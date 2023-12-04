@@ -28,6 +28,11 @@ public class GestionDesEchelonsEtDesTaux {
     public static final char NOTE_ATTEINT_MIN = 'a';
     public static final char NOTE_PARTIELLEMENT_ATTEINT_MIN = 'p';
     public static final char NOTE_NON_ATTEINT_MIN = 'n';
+
+    public static final String DESCRIPTION_NOTE_DEPASSE = "Dépasse";
+    public static final String DESCRIPTION_NOTE_ATTEINT = "Atteint";
+    public static final String DESCRIPTION_NOTE_PARTIELLEMENT_ATTEINT = "Partiellement atteint";
+    public static final String DESCRIPTION_NOTE_NON_ATTEINT = "Non atteint";
  
     // Constantes pour les échelons
     public static final int ECHELON_1 = 1;
@@ -45,16 +50,16 @@ public class GestionDesEchelonsEtDesTaux {
       String description = "Note inconnue";
       switch (noteEvalPerf) {
          case NOTE_DEPASSE:
-            description = "dépasse";
+            description = DESCRIPTION_NOTE_DEPASSE;
             break;
          case NOTE_ATTEINT:
-            description = "atteint";
+            description = DESCRIPTION_NOTE_ATTEINT;
             break;
          case NOTE_PARTIELLEMENT_ATTEINT:
-            description = "partiellement atteint";
+            description = DESCRIPTION_NOTE_PARTIELLEMENT_ATTEINT;
             break;
          case NOTE_NON_ATTEINT:
-            description = "non atteint";
+            description = DESCRIPTION_NOTE_NON_ATTEINT;
             break;
          default:
             description = "Note inconnue";
