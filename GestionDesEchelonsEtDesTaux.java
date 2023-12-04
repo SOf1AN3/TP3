@@ -24,25 +24,15 @@ public class GestionDesEchelonsEtDesTaux {
     public static final char NOTE_PARTIELLEMENT_ATTEINT = 'P';
     public static final char NOTE_NON_ATTEINT = 'N';
 
-    // Descriptions correspondantes aux notes d'évaluation de la performance
-    public static final String DESCRIPTION_DEPASSE = "Dépasse";
-    public static final String DESCRIPTION_ATTEINT = "Atteint";
-    public static final String DESCRIPTION_PARTIELLEMENT_ATTEINT = "Partiellement Atteint";
-    public static final String DESCRIPTION_NON_ATTEINT = "Non Atteint";
-
+    public static final char NOTE_DEPASSE_MIN = 'd';
+    public static final char NOTE_ATTEINT_MIN = 'a';
+    public static final char NOTE_PARTIELLEMENT_ATTEINT_MIN = 'p';
+    public static final char NOTE_NON_ATTEINT_MIN = 'n';
+ 
     // Constantes pour les échelons
     public static final int ECHELON_1 = 1;
     public static final int ECHELON_2 = 2;
     public static final int ECHELON_3 = 3;
-
-    // Constantes pour les taux de bonus et d'augmentation de salaire
-    public static final float TAUX_BONUS_ECHELON_1 = 0.05f;
-    public static final float TAUX_BONUS_ECHELON_2 = 0.08f;
-    public static final float TAUX_BONUS_ECHELON_3 = 0.1f;
-
-    public static final float TAUX_AUGMENT_SALAIRE_ECHELON_1 = 0.03f;
-    public static final float TAUX_AUGMENT_SALAIRE_ECHELON_2 = 0.05f;
-    public static final float TAUX_AUGMENT_SALAIRE_ECHELON_3 = 0.08f;
 
    /**
     * Obtenir la description de la note d'évaluation de la performance
@@ -52,20 +42,24 @@ public class GestionDesEchelonsEtDesTaux {
     * @return la description de la note d'évaluation de la performance
     */
    public static String obtenirDescriptionNoteEvalPerf(char noteEvalPerf) {
-      // PLUSIEURS RETOURS
-
+      String description = "Note inconnue";
       switch (noteEvalPerf) {
          case NOTE_DEPASSE:
-            return DESCRIPTION_DEPASSE;
+            description = "dépasse";
+            break;
          case NOTE_ATTEINT:
-            return DESCRIPTION_ATTEINT;
+            description = "atteint";
+            break;
          case NOTE_PARTIELLEMENT_ATTEINT:
-            return DESCRIPTION_PARTIELLEMENT_ATTEINT;
+            description = "partiellement atteint";
+            break;
          case NOTE_NON_ATTEINT:
-            return DESCRIPTION_NON_ATTEINT;
+            description = "non atteint";
+            break;
          default:
-            return "Note inconnue";
+            description = "Note inconnue";
       }
+      return description;
    }
    
    /**
@@ -77,16 +71,26 @@ public class GestionDesEchelonsEtDesTaux {
     * @return le taux de bonus
     */
    public static float obtenirTauxBonus(int echelonEmpl, char noteEvalPerfEmpl) {
-      switch (echelonEmpl) {
-         case ECHELON_1:
-            return TAUX_BONUS_ECHELON_1;
-         case ECHELON_2:
-            return TAUX_BONUS_ECHELON_2;
-         case ECHELON_3:
-            return TAUX_BONUS_ECHELON_3;
-         default:
-            return 0.0f;
-      }
+      float taux_bonus = 0;
+        if(echelonEmpl == 1)
+            {
+                if(noteEvalPerfEmpl == 'D' || noteEvalPerfEmpl == 'd') taux_bonus = 8.50f;
+                if(noteEvalPerfEmpl == 'A' || noteEvalPerfEmpl == 'a') taux_bonus = 6.00f;
+                if(noteEvalPerfEmpl == 'P' || noteEvalPerfEmpl == 'p') taux_bonus = 4.50f;
+            }
+        else if(echelonEmpl == 2)
+            {
+                if(noteEvalPerfEmpl == 'D' || noteEvalPerfEmpl == 'd') taux_bonus = 12.50f;
+                if(noteEvalPerfEmpl == 'A' || noteEvalPerfEmpl == 'a') taux_bonus = 10.50f;
+                if(noteEvalPerfEmpl == 'P' || noteEvalPerfEmpl == 'p') taux_bonus = 8.00f;
+            }
+        else if(echelonEmpl == 3)
+            {
+                if(noteEvalPerfEmpl == 'D' || noteEvalPerfEmpl == 'd') taux_bonus = 15.00f;
+                if(noteEvalPerfEmpl == 'A' || noteEvalPerfEmpl == 'a') taux_bonus = 12.50f;
+                if(noteEvalPerfEmpl == 'P' || noteEvalPerfEmpl == 'p') taux_bonus = 10.50f;
+            }
+            return taux_bonus;
    }
    
    /**
@@ -98,15 +102,10 @@ public class GestionDesEchelonsEtDesTaux {
     */
    public static float obtenirTauxAugmentSalaire(int echelonEmpl) {
       
-      switch (echelonEmpl) {
-         case ECHELON_1:
-            return TAUX_AUGMENT_SALAIRE_ECHELON_1;
-         case ECHELON_2:
-            return TAUX_AUGMENT_SALAIRE_ECHELON_2;
-         case ECHELON_3:
-            return TAUX_AUGMENT_SALAIRE_ECHELON_3;
-         default:
-            return 0.0f;
+      float taux = 0;
+        if(echelonEmpl == 1) taux = 3.5f;
+        if(echelonEmpl == 2) taux = 3.75f;
+        if(echelonEmpl == 3) taux = 4f;
+        return taux;
       }
    }
-}

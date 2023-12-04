@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 import java.util.Scanner;
 
+
 /**
  * Université du Québec à  Montréal (UQAM) 
  * INF1120 - 021 - Automne 2023 
@@ -46,7 +47,18 @@ public class ApplicationPrincipale {
     public static final String MSG_AUCUN_EMPLOYE         = "\n  Aucun employé avec ce matricule!";
     public static final String MSG_TOUS_LES_EMPLOYES     = "\n  Les montants de bonus et de l'augmentation"
                                                                 + " de salaire sont calculés pour tous les employés!";
-
+                                                                
+    public static void afficherInformationsMagasin() {
+        String message = """
+            ============================================================================
+            Jeux Vidéo Pour Tous
+            Adresse       : 2500 rue Hakuna, Matata, Québec J3W 4N3
+            Téléphone     : (514) 884-7373
+            Date et Heure :  22-11-2023 15:38:53
+            ============================================================================
+                """;
+        System.out.println(message);
+    }                                                            
     /**
      * Affiche le message de bienvenue
      */
@@ -189,8 +201,16 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption1(Employe employe) {
 
-        // À COMPLÉTER
+        afficherInformationsMagasin();
+        System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
+        System.out.println("Matricule     : " + employe.getMatricule());
+        System.out.println("Echelon       : " + employe.getEchelon());
+        System.out.println("Salaire       : " + DOLLAR + employe.getSalaire() +"\n");
+        System.out.println("Taux de bonus  : " + employe.getTauxBonus());
+        System.out.println("Montant bonus : " + DOLLAR + employe.getMontantBonus());
+        System.out.println("Note d'évaluation de la performance : " + GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(employe.getNoteEvaluation()));
 
+        System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
     }
 
     /**

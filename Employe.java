@@ -85,7 +85,7 @@ public class Employe {
 
     // Méthode pour calculer le montant de bonus
     public void calculerMontantBonus() {
-        montantBonus = tauxBonus * salaire;
+        montantBonus = tauxBonus * salaire / 100;
     }
 
     // Méthode pour calculer le montant de l'augmentation de salaire
