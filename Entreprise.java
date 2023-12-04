@@ -174,19 +174,10 @@ public class Entreprise {
         Employe employe = rechercherParMatricule(matricule);
 
         if (employe != null) {
-            // Déterminer le taux de bonus en fonction de certains critères
-            employe.determinerTauxBonus();
-
-            // Calculer le montant de bonus
-            double montantBonus = employe.getSalaire() * employe.getTauxBonus();
-
-            // Mettre à jour l'employé avec le montant de bonus calculé
             employe.calculerMontantBonus();
-
-            return employe;
         }
 
-        return null;
+        return employe;
     }
 
 
@@ -203,13 +194,12 @@ public class Entreprise {
      * @return l'employé dont le montant de l'augmentation de salaire est calculé, ou null
      */
     public static Employe calculerMontantAugSalaire(String matricule) {
+        Employe employe = rechercherParMatricule(matricule);
 
-        // À COMPLÉTER
-        
-        return null;
-
-        
-
+        if (employe != null) {
+            employe.calculerMontantAugmentationSalaire();
+        }
+        return employe;
     }
 
     /**
@@ -219,8 +209,10 @@ public class Entreprise {
      */
     public static void calculerMontantsBonusEtAugSalaire() {
 
-        // À COMPLÉTER
-
+        for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) {
+                 lesEmployes[i].calculerMontantBonus();
+                 lesEmployes[i].calculerMontantAugmentationSalaire();
+        }
     }
 
 }
