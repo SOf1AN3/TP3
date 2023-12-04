@@ -90,14 +90,23 @@ public class Employe {
 
     // Méthode pour calculer le montant de l'augmentation de salaire
     public void calculerMontantAugmentationSalaire() {
-        montantAugmentationSalaire = tauxAugmentationSalaire * salaire;
+        montantAugmentationSalaire = tauxAugmentationSalaire * salaire / 100;
     }
+
 
     // Redéfinition de la méthode toString()
     @Override
     public String toString() {
-        return String.format("%s | %s %s | %d | %s | %.2f$ | %.2f | %.2f$ | %.2f | %.2f$ | %.2f$",
-                matricule, prenom, nom, echelon, GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(noteEvaluation),
-                salaire, tauxBonus, montantBonus, tauxAugmentationSalaire, montantAugmentationSalaire, salaire + montantAugmentationSalaire);
+        return String.format("%-10s | %-30s | %-2d | %-22s | %-10s | %-5.2f | %-10s | %-5.2f | %-10s | %-10s ",
+        matricule, prenom + " " + nom, echelon, GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(noteEvaluation),
+        formatMontant(salaire), tauxBonus, formatMontant(montantBonus), tauxAugmentationSalaire, formatMontant(montantAugmentationSalaire),
+        formatMontant(salaire + montantAugmentationSalaire));
+
+
     }
+
+    // Méthode pour formater les montants en ajoutant le symbole "$"
+    private String formatMontant(double montant) {
+        return String.format("%.2f$", montant);
 }
+}   
