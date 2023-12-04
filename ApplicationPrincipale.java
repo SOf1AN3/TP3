@@ -47,18 +47,7 @@ public class ApplicationPrincipale {
     public static final String MSG_AUCUN_EMPLOYE         = "\n  Aucun employé avec ce matricule!";
     public static final String MSG_TOUS_LES_EMPLOYES     = "\n  Les montants de bonus et de l'augmentation"
                                                                 + " de salaire sont calculés pour tous les employés!";
-                                                                
-    public static void afficherInformationsMagasin() {
-        String message = """
-            ============================================================================
-            Jeux Vidéo Pour Tous
-            Adresse       : 2500 rue Hakuna, Matata, Québec J3W 4N3
-            Téléphone     : (514) 884-7373
-            Date et Heure :  22-11-2023 15:38:53
-            ============================================================================
-                """;
-        System.out.println(message);
-    }                                                            
+                                                         
     /**
      * Affiche le message de bienvenue
      */
@@ -201,7 +190,7 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption1(Employe employe) {
 
-        afficherInformationsMagasin();
+        Entreprise.afficherInformationsEntreprise();
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
@@ -221,7 +210,7 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption2(Employe employe) {
 
-            afficherInformationsMagasin();
+        Entreprise.afficherInformationsEntreprise();
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
@@ -242,7 +231,7 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption3(Employe employe) {
 
-          afficherInformationsMagasin();
+        Entreprise.afficherInformationsEntreprise();
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
@@ -351,6 +340,7 @@ public class ApplicationPrincipale {
 
             } else if (choixMenu == CHOIX_5) {
                 // Afficher tous les employés
+                Entreprise.afficherInformationsEntreprise();
                 Entreprise.afficherLesEmployes();
 
                 // Cette méthode marque une pause en demandant à l'utilisateur
