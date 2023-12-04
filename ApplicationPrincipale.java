@@ -205,9 +205,9 @@ public class ApplicationPrincipale {
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
-        System.out.println("Salaire       : " + DOLLAR + employe.getSalaire() +"\n");
+        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
         System.out.println("Taux de bonus  : " + employe.getTauxBonus());
-        System.out.println("Montant bonus : " + DOLLAR + employe.getMontantBonus());
+        System.out.println("Montant bonus : " +  employe.getMontantBonus() + DOLLAR);
         System.out.println("Note d'évaluation de la performance : " + GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(employe.getNoteEvaluation()));
 
         System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
@@ -221,7 +221,16 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption2(Employe employe) {
 
-          // À COMPLÉTER
+            afficherInformationsMagasin();
+        System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
+        System.out.println("Matricule     : " + employe.getMatricule());
+        System.out.println("Echelon       : " + employe.getEchelon());
+        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
+
+        System.out.println("Taux d'augmentation de salaire : " + employe.getTauxAugmentationSalaire());
+        System.out.println("Montant augmentation salaire : " + String.format("%.2f", employe.getMontantAugmentationSalaire()) + DOLLAR);
+        System.out.println("Nouveau salaire : "  + String.format("%.2f",(employe.getSalaire() + employe.getMontantAugmentationSalaire())) + DOLLAR);
+        System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
 
     }
 
@@ -233,7 +242,20 @@ public class ApplicationPrincipale {
      */
     public static void afficherInformationsOption3(Employe employe) {
 
-          // À COMPLÉTER
+          afficherInformationsMagasin();
+        System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
+        System.out.println("Matricule     : " + employe.getMatricule());
+        System.out.println("Echelon       : " + employe.getEchelon());
+        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
+        System.out.println("Taux de bonus  : " + employe.getTauxBonus());
+        System.out.println("Montant bonus : " + employe.getMontantBonus() + DOLLAR);
+        System.out.println("Note d'évaluation de la performance : " + GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(employe.getNoteEvaluation()));
+
+        System.out.println("\n");
+        System.out.println("Taux d'augmentation de salaire : " + employe.getTauxAugmentationSalaire());
+        System.out.println("Montant augmentation salaire : " + employe.getMontantAugmentationSalaire() + DOLLAR);
+        System.out.println("Nouveau salaire : " + (employe.getSalaire() + employe.getMontantAugmentationSalaire()) + DOLLAR);
+        System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
     }
 
     // Le point d'entrée de la machine virtuelle
