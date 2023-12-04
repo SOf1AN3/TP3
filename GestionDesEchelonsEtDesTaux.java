@@ -52,6 +52,8 @@ public class GestionDesEchelonsEtDesTaux {
     * @return la description de la note d'évaluation de la performance
     */
    public static String obtenirDescriptionNoteEvalPerf(char noteEvalPerf) {
+      // PLUSIEURS RETOURS
+
       switch (noteEvalPerf) {
          case NOTE_DEPASSE:
             return DESCRIPTION_DEPASSE;
