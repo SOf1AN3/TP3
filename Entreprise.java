@@ -111,16 +111,34 @@ public class Entreprise {
      */
     public static void ecrireLesEmployes() {
         try (PrintWriter writer = new PrintWriter(FIC_EMPLOYES_APRES_TRAITEMENT)) {
-            for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) 
-            {
-                // Écrire les données de chaque employé séparées par des points-virgules
-                writer.println(lesEmployes[i].getMatricule() + ";" + lesEmployes[i].getPrenom() + ";"
-                        + lesEmployes[i].getNom() + ";" + lesEmployes[i].getEchelon() + ";"
-                        + lesEmployes[i].getNoteEvaluation() + ";" + lesEmployes[i].getSalaire());
+            // Écrire l'en-tête du fichier CSV
+            writer.println("Matricule;Prénom et nom;échelon;Description de la note d'évaluation de la performance;salaire;Taux de bonus;Montant de bonus;Taux de l'augmentation de salaire;Montant de l'augmentation de salaire;Nouveau salaire");
+
+            for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) {
+                // Utiliser String.format pour formater la ligne
+                String ligne = String.format("%-10s | %-30s | %-2d | %-22s | %-10s | %-5.2f | %-10s | %-5.2f | %-10s | %-10s ",
+                        lesEmployes[i].getMatricule(), 
+                        lesEmployes[i].getPrenom() + " " + lesEmployes[i].getNom(),
+                        lesEmployes[i].getEchelon(),
+                        GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(lesEmployes[i].getNoteEvaluation()),
+                        formatMontant(lesEmployes[i].getSalaire()), 
+                        lesEmployes[i].getTauxBonus(),
+                        formatMontant(lesEmployes[i].getMontantBonus()),
+                        lesEmployes[i].getTauxAugmentationSalaire(),
+                        formatMontant(lesEmployes[i].getMontantAugmentationSalaire()),
+                        formatMontant(lesEmployes[i].getSalaire() + lesEmployes[i].getMontantAugmentationSalaire()));
+
+                // Écrire la ligne dans le fichier
+                writer.println(ligne);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    
+    // Méthode pour formater les montants en ajoutant le symbole "$"
+    private static String formatMontant(double montant) {
+        return String.format("%.2f$", montant);
     }
     
 
@@ -135,7 +153,7 @@ public class Entreprise {
     public static void afficherLesEmployes() {
         for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) {
             // Appeler la méthode toString de la classe Employe
-            System.out.println(lesEmployes[i]);
+            System.out.println(lesEmployes[i].toString());
         }
     }
     
@@ -212,6 +230,7 @@ public class Entreprise {
         for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) {
                  lesEmployes[i].calculerMontantBonus();
                  lesEmployes[i].calculerMontantAugmentationSalaire();
+
         }
     }
 
