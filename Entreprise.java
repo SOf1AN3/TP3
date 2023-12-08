@@ -115,8 +115,13 @@ public class Entreprise {
             writer.println("Matricule;Prénom et nom;échelon;Description de la note d'évaluation de la performance;salaire;Taux de bonus;Montant de bonus;Taux de l'augmentation de salaire;Montant de l'augmentation de salaire;Nouveau salaire");
 
             for (int i = 0; i < MAX_EMPLOYES && lesEmployes[i] != null; i++) {
+                
+                lesEmployes[i].determinerTauxBonus();
+                lesEmployes[i].calculerMontantBonus();
+                lesEmployes[i].determinerTauxAugmentationSalaire();
+                lesEmployes[i].calculerMontantAugmentationSalaire();
                 // Utiliser String.format pour formater la ligne
-                String ligne = String.format("%-10s | %-30s | %-2d | %-22s | %-10s | %-5.2f | %-10s | %-5.2f | %-10s | %-10s ",
+                String ligne = String.format("%-8s | %-25s | %-1d | %-22s | %-10s | %-5.2f | %-9s | %-5.2f | %-9s | %-10s ",
                         lesEmployes[i].getMatricule(), 
                         lesEmployes[i].getPrenom() + " " + lesEmployes[i].getNom(),
                         lesEmployes[i].getEchelon(),
@@ -215,6 +220,7 @@ public class Entreprise {
         Employe employe = rechercherParMatricule(matricule);
 
         if (employe != null) {
+            
             employe.calculerMontantAugmentationSalaire();
         }
         return employe;

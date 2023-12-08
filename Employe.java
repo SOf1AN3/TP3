@@ -15,21 +15,7 @@ public class Employe {
         this.noteEvaluation = noteEvaluation;
         this.echelon = echelon;
         this.salaire = salaire;
-        this.determinerTauxBonus();
-        this.determinerTauxAugmentationSalaire();
-        this.calculerMontantBonus();
-        this.calculerMontantAugmentationSalaire();
-    }
-    public Employe(String matricule, String prenom, String nom, int echelon, double salaire) {
-        this.matricule = matricule;
-        this.prenom = prenom;
-        this.nom = nom;
-        this.echelon = echelon;
-        this.salaire = salaire;
-        this.determinerTauxBonus();
-        this.determinerTauxAugmentationSalaire();
-        this.calculerMontantBonus();
-        this.calculerMontantAugmentationSalaire();
+        
     }
 
     // Getters
@@ -72,25 +58,26 @@ public class Employe {
     public double getMontantAugmentationSalaire() {
         return montantAugmentationSalaire;
     }
+    
 
     // Méthode pour déterminer le taux de bonus
     public void determinerTauxBonus() {
-        tauxBonus = GestionDesEchelonsEtDesTaux.obtenirTauxBonus(echelon, noteEvaluation);
+        this.tauxBonus = GestionDesEchelonsEtDesTaux.obtenirTauxBonus(echelon, noteEvaluation);
     }
 
     // Méthode pour déterminer le taux de l'augmentation de salaire
     public void determinerTauxAugmentationSalaire() {
-        tauxAugmentationSalaire = GestionDesEchelonsEtDesTaux.obtenirTauxAugmentSalaire(echelon);
+        this.tauxAugmentationSalaire = GestionDesEchelonsEtDesTaux.obtenirTauxAugmentSalaire(echelon);
     }
 
     // Méthode pour calculer le montant de bonus
     public void calculerMontantBonus() {
-        montantBonus = tauxBonus * salaire / 100;
+        this.montantBonus = tauxBonus * salaire / 100;
     }
 
     // Méthode pour calculer le montant de l'augmentation de salaire
     public void calculerMontantAugmentationSalaire() {
-        montantAugmentationSalaire = tauxAugmentationSalaire * salaire / 100;
+        this.montantAugmentationSalaire = tauxAugmentationSalaire * salaire / 100;
     }
 
 

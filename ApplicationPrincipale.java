@@ -1,4 +1,9 @@
 package TP3;
+
+import TP3.Employe;
+import TP3.Entreprise;
+import TP3.GestionDesEchelonsEtDesTaux;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,7 +52,7 @@ public class ApplicationPrincipale {
     public static final String MSG_AUCUN_EMPLOYE         = "\n  Aucun employé avec ce matricule!";
     public static final String MSG_TOUS_LES_EMPLOYES     = "\n  Les montants de bonus et de l'augmentation"
                                                                 + " de salaire sont calculés pour tous les employés!";
-                                                         
+    public static final String MSG_FIN_OPERATION = "\n\n\t\t------------------------------------------------------\n 		           Merci pour votre confiance!";                                                   
     /**
      * Affiche le message de bienvenue
      */
@@ -280,6 +285,8 @@ public class ApplicationPrincipale {
                     Entreprise.calculerMontantBonus(employe.getMatricule());
                 }
 
+
+                
                 if (choixMenu == CHOIX_2 || choixMenu == CHOIX_3) {
                     // Calculer le montant de l'augmentation de salaire
                     // d'un employé
@@ -292,6 +299,7 @@ public class ApplicationPrincipale {
                 // Calculer les montants de bonus et de l'augmentation de salaire
                 // de tous les employés
                 Entreprise.calculerMontantsBonusEtAugSalaire();
+                Entreprise.ecrireLesEmployes();
             }
 
             if (employe != null) {
@@ -301,7 +309,7 @@ public class ApplicationPrincipale {
                     // Afficher les informations après le calcul du montant 
                     // de bonus d'un employé (Option 1)
                     afficherInformationsOption1(employe);
-
+                    System.out.println(MSG_FIN_OPERATION);
                     // Cette méthode marque une pause en demandant à l'utilisateur
                     // d'appuyer sur la touche [ENTREE] pour continuer
                     pause();
@@ -311,7 +319,7 @@ public class ApplicationPrincipale {
                     // Afficher les informations après le calcul du montant de
                     // l’augmentation de salaire d'un employé (Option 2)
                     afficherInformationsOption2(employe);
-
+                    System.out.println(MSG_FIN_OPERATION);
                     // Cette methode marque une pause en demandant à l'utilisateur
                     // d'appuyer sur la touche [ENTREE] pour continuer
                     pause();
@@ -321,7 +329,7 @@ public class ApplicationPrincipale {
                     // Afficher les informations après le calcul des montants de
                     // bonus, et de l’augmentation de salaire d'un employé
                     afficherInformationsOption3(employe);
-
+                    System.out.println(MSG_FIN_OPERATION);
                     // Cette méthode marque une pause en demandant à l'utilisateur
                     // d'appuyer sur la touche [ENTREE] pour continuer
                     pause();
@@ -342,6 +350,7 @@ public class ApplicationPrincipale {
                 // Afficher tous les employés
                 Entreprise.afficherInformationsEntreprise();
                 Entreprise.afficherLesEmployes();
+                System.out.println(MSG_FIN_OPERATION);
 
                 // Cette méthode marque une pause en demandant à l'utilisateur
                 // d'appuyer sur la touche [ENTREE] pour continuer
@@ -358,7 +367,6 @@ public class ApplicationPrincipale {
                 sortie = true;
 
             }
-
         } while (!sortie);
 
     }

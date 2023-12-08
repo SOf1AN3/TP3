@@ -1,11 +1,11 @@
 Matricule;Prénom et nom;échelon;Description de la note d'évaluation de la performance;salaire;Taux de bonus;Montant de bonus;Taux de l'augmentation de salaire;Montant de l'augmentation de salaire;Nouveau salaire
-BARN1234   | Noah Barry                     | 1  | Dépasse                | 100000,00$ | 8,50  | 8500,00$   | 3,50  | 3500,00$   | 103500,00$ 
-KANS5906   | Simba Kante                    | 2  | Partiellement atteint  | 110000,55$ | 8,00  | 8800,04$   | 3,75  | 4125,02$   | 114125,57$ 
-COSF2546   | Fred Costin                    | 3  | Atteint                | 120000,00$ | 12,50 | 15000,00$  | 4,00  | 4800,00$   | 124800,00$ 
-JACO4789   | Omer Jacques                   | 2  | Non atteint            | 115000,15$ | 0,00  | 0,00$      | 3,75  | 4312,51$   | 119312,66$ 
-BETA2579   | Alpha Beta                     | 3  | Dépasse                | 125000,00$ | 15,00 | 18750,00$  | 4,00  | 5000,00$   | 130000,00$ 
-CARP9899   | Philippe Cardenas              | 2  | Dépasse                | 111000,00$ | 12,50 | 13875,00$  | 3,75  | 4162,50$   | 115162,50$ 
-ABEJ2548   | John Abel                      | 1  | Dépasse                | 103000,00$ | 8,50  | 8755,00$   | 3,50  | 3605,00$   | 106605,00$ 
-BAMR4456   | Raphael Bamba                  | 3  | Atteint                | 126000,00$ | 12,50 | 15750,00$  | 4,00  | 5040,00$   | 131040,00$ 
-VALD2234   | Daniel Valdor                  | 1  | Atteint                | 150000,00$ | 6,00  | 9000,00$   | 3,50  | 5250,00$   | 155250,00$ 
-BELF6906   | Franck Bella                   | 3  | Partiellement atteint  | 195000,55$ | 10,50 | 20475,06$  | 4,00  | 7800,02$   | 202800,57$ 
+BARN1234 | Noah Barry                | 1 | Dépasse                | 100000,00$ | 8,50  | 8500,00$  | 3,50  | 3500,00$  | 103500,00$ 
+KANS5906 | Simba Kante               | 2 | Partiellement atteint  | 110000,55$ | 8,00  | 8800,04$  | 3,75  | 4125,02$  | 114125,57$ 
+COSF2546 | Fred Costin               | 3 | Atteint                | 120000,00$ | 12,50 | 15000,00$ | 4,00  | 4800,00$  | 124800,00$ 
+JACO4789 | Omer Jacques              | 2 | Non atteint            | 115000,15$ | 0,00  | 0,00$     | 3,75  | 4312,51$  | 119312,66$ 
+BETA2579 | Alpha Beta                | 3 | Dépasse                | 125000,00$ | 15,00 | 18750,00$ | 4,00  | 5000,00$  | 130000,00$ 
+CARP9899 | Philippe Cardenas         | 2 | Dépasse                | 111000,00$ | 12,50 | 13875,00$ | 3,75  | 4162,50$  | 115162,50$ 
+ABEJ2548 | John Abel                 | 1 | Dépasse                | 103000,00$ | 8,50  | 8755,00$  | 3,50  | 3605,00$  | 106605,00$ 
+BAMR4456 | Raphael Bamba             | 3 | Atteint                | 126000,00$ | 12,50 | 15750,00$ | 4,00  | 5040,00$  | 131040,00$ 
+VALD2234 | Daniel Valdor             | 1 | Atteint                | 150000,00$ | 6,00  | 9000,00$  | 3,50  | 5250,00$  | 155250,00$ 
+BELF6906 | Franck Bella              | 3 | Partiellement atteint  | 195000,55$ | 10,50 | 20475,06$ | 4,00  | 7800,02$  | 202800,57$ 
