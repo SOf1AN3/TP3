@@ -15,7 +15,6 @@ public class Employe {
         this.noteEvaluation = noteEvaluation;
         this.echelon = echelon;
         this.salaire = salaire;
-        
     }
 
     // Getters
@@ -84,7 +83,7 @@ public class Employe {
     // Redéfinition de la méthode toString()
     @Override
     public String toString() {
-        return String.format("%-10s | %-30s | %-2d | %-22s | %-10s | %-5.2f | %-10s | %-5.2f | %-10s | %-10s ",
+        return String.format("%-8s | %-25s | %-1d | %-22s | %-10s | %-5.2f | %-9s | %-4.2f | %-8s | %-10s ",
         matricule, prenom + " " + nom, echelon, GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(noteEvaluation),
         formatMontant(salaire), tauxBonus, formatMontant(montantBonus), tauxAugmentationSalaire, formatMontant(montantAugmentationSalaire),
         formatMontant(salaire + montantAugmentationSalaire));
