@@ -199,9 +199,9 @@ public class ApplicationPrincipale {
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
-        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
+        System.out.println("Salaire       : " + String.format("%.2f", employe.getSalaire()) + DOLLAR +"\n");
         System.out.println("Taux de bonus  : " + employe.getTauxBonus());
-        System.out.println("Montant bonus : " +  employe.getMontantBonus() + DOLLAR);
+        System.out.println("Montant bonus : " +  String.format("%.2f", employe.getMontantBonus()) + DOLLAR);
         System.out.println("Note d'évaluation de la performance : " + GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(employe.getNoteEvaluation()));
 
         System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
@@ -219,7 +219,7 @@ public class ApplicationPrincipale {
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
-        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
+        System.out.println("Salaire       : " + String.format("%.2f", employe.getSalaire()) + DOLLAR +"\n");
 
         System.out.println("Taux d'augmentation de salaire : " + employe.getTauxAugmentationSalaire());
         System.out.println("Montant augmentation salaire : " + String.format("%.2f", employe.getMontantAugmentationSalaire()) + DOLLAR);
@@ -240,15 +240,15 @@ public class ApplicationPrincipale {
         System.out.println("Prenom et Nom : " + employe.getPrenom() + " " + employe.getNom());
         System.out.println("Matricule     : " + employe.getMatricule());
         System.out.println("Echelon       : " + employe.getEchelon());
-        System.out.println("Salaire       : " + employe.getSalaire() + DOLLAR +"\n");
+        System.out.println("Salaire       : " + String.format("%.2f", employe.getSalaire()) + DOLLAR +"\n");
         System.out.println("Taux de bonus  : " + employe.getTauxBonus());
-        System.out.println("Montant bonus : " + employe.getMontantBonus() + DOLLAR);
+        System.out.println("Montant bonus : " + String.format("%.2f", employe.getMontantBonus()) + DOLLAR);
         System.out.println("Note d'évaluation de la performance : " + GestionDesEchelonsEtDesTaux.obtenirDescriptionNoteEvalPerf(employe.getNoteEvaluation()));
 
         System.out.println("\n");
         System.out.println("Taux d'augmentation de salaire : " + employe.getTauxAugmentationSalaire());
-        System.out.println("Montant augmentation salaire : " + employe.getMontantAugmentationSalaire() + DOLLAR);
-        System.out.println("Nouveau salaire : " + (employe.getSalaire() + employe.getMontantAugmentationSalaire()) + DOLLAR);
+        System.out.println("Montant augmentation salaire : " + String.format("%.2f", employe.getMontantAugmentationSalaire()) + DOLLAR);
+        System.out.println("Nouveau salaire : " + String.format("%.2f",(employe.getSalaire() + employe.getMontantAugmentationSalaire())) + DOLLAR);
         System.out.println("\n  " + MSG_RETOUR_MENU_PRINCIPAL);
     }
 
@@ -290,6 +290,7 @@ public class ApplicationPrincipale {
                 if (choixMenu == CHOIX_2 || choixMenu == CHOIX_3) {
                     // Calculer le montant de l'augmentation de salaire
                     // d'un employé
+                    
                     Entreprise.calculerMontantAugSalaire(employe.getMatricule());
                 }
 

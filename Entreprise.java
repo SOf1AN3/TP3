@@ -197,6 +197,7 @@ public class Entreprise {
         Employe employe = rechercherParMatricule(matricule);
 
         if (employe != null) {
+            employe.determinerTauxBonus();
             employe.calculerMontantBonus();
         }
 
@@ -220,7 +221,7 @@ public class Entreprise {
         Employe employe = rechercherParMatricule(matricule);
 
         if (employe != null) {
-            
+            employe.determinerTauxAugmentationSalaire();
             employe.calculerMontantAugmentationSalaire();
         }
         return employe;
