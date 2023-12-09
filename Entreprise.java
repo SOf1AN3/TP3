@@ -109,6 +109,7 @@ public class Entreprise {
      * Pour plus de détails, voir le fichier LesEmployesApresTraitement.csv.
      * 
      */
+    
     public static void ecrireLesEmployes() {
         try (PrintWriter writer = new PrintWriter(FIC_EMPLOYES_APRES_TRAITEMENT)) {
             // Écrire l'en-tête du fichier CSV
@@ -119,7 +120,7 @@ public class Entreprise {
                 lesEmployes[i].determinerTauxBonus();
                 lesEmployes[i].calculerMontantBonus();
                 lesEmployes[i].determinerTauxAugmentationSalaire();
-                lesEmployes[i].calculerMontantAugmentationSalaire();
+                lesEmployes[i].calculerMontantAugmentationSalaire(); 
                 // Utiliser String.format pour formater la ligne
                 String ligne = String.format("%-8s | %-25s | %-1d | %-22s | %-10s | %-5.2f | %-9s | %-5.2f | %-9s | %-10s ",
                         lesEmployes[i].getMatricule(), 

@@ -5,7 +5,8 @@ public class Employe {
     private String matricule, prenom, nom;
     private char noteEvaluation;
     private int echelon;
-    private double salaire, tauxBonus, tauxAugmentationSalaire, montantBonus, montantAugmentationSalaire;
+    private double salaire, montantBonus, montantAugmentationSalaire;
+    private float tauxBonus, tauxAugmentationSalaire;
 
     // Constructeur
     public Employe(String matricule, String prenom, String nom, int echelon , char noteEvaluation, double salaire) {
@@ -15,6 +16,7 @@ public class Employe {
         this.noteEvaluation = noteEvaluation;
         this.echelon = echelon;
         this.salaire = salaire;
+        FormatNomPrenom();
     }
 
     // Getters
@@ -94,5 +96,12 @@ public class Employe {
     // Méthode pour formater les montants en ajoutant le symbole "$"
     private String formatMontant(double montant) {
         return String.format("%.2f$", montant);
-}
+    }
+
+    private void FormatNomPrenom() {
+            nom.toLowerCase();
+            prenom.toLowerCase();
+            nom = nom.substring(0,1).toUpperCase() + nom.substring(1);
+            prenom = prenom.substring(0,1).toUpperCase() + prenom.substring(1);
+    }
 }   
