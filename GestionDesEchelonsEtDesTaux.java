@@ -1,8 +1,4 @@
 
-package TP3;
-
-import java.util.Scanner;
-
 /**
  * Université du Québec à Montréal (UQAM) 
  * INF1120 - 021 - Automne 2023 

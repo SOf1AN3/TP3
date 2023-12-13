@@ -1,5 +1,3 @@
-package TP3;
-
 public class Employe {
 
     private String matricule, prenom, nom;

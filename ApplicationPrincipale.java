@@ -1,13 +1,6 @@
-package TP3;
-
-import TP3.Employe;
-import TP3.Entreprise;
-import TP3.GestionDesEchelonsEtDesTaux;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import java.util.Scanner;
 
 
 /**
@@ -73,7 +66,6 @@ public class ApplicationPrincipale {
      * @return l'option du menu choisi par l'utilisateur
      */
     public static int saisirValiderChoixMenu() {
-        Scanner scanner = new Scanner(System.in);
         boolean est_pas_valide = true;
         int bon_choix = 0;
 
@@ -81,7 +73,7 @@ public class ApplicationPrincipale {
             est_pas_valide = false;
             try {
                 System.out.print("Veuillez saisir un choix entre 1 et 6 inclusivement : ");
-                String userInput = scanner.nextLine();
+                String userInput = Clavier.lireString();
                 int choix = Integer.parseInt(userInput);
 
                 // Validate that the choice is between 1 and 6
@@ -93,7 +85,7 @@ public class ApplicationPrincipale {
             } catch (NumberFormatException e) {
                 System.out.println("Erreur : Veuillez entrer un nombre entier.");
                 // Clear the buffer
-                scanner.nextLine();
+                Clavier.lireFinLigne();
                 est_pas_valide = true;
             }
             }
@@ -101,7 +93,6 @@ public class ApplicationPrincipale {
         }
 
     public static String saisirValiderMatriculeEmploye() {
-        Scanner scanner = new Scanner(System.in);
         String matricule;
         boolean est_pas_valide = false;
         int i;
@@ -110,7 +101,7 @@ public class ApplicationPrincipale {
         do {
             est_pas_valide = false;
             System.out.print("Veuillez entrer le matricule de l'employé (ou q/Q pour quitter) : ");
-            matricule = scanner.nextLine();
+            matricule = Clavier.lireString();
 
             if (matricule.length() == 1 && matricule.charAt(0) == 'q' || matricule.charAt(0) == 'Q') {
                 return "q";
@@ -181,10 +172,8 @@ public class ApplicationPrincipale {
      * la touche [ENTREE] pour continuer.
      */
     public static void pause() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("\n  Appuyer sur <ENTREE> pour réafficher le menu...");
-        scanner.nextLine();
-        // Clavier.lireFinLigne();
+        Clavier.lireFinLigne();
     }
 
     /**
